@@ -1,10 +1,23 @@
+import os
+import sys
+import traceback
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QLabel, QApplication
 
-DEFAULT_PHOTO = 'images/Default_photo.png'
-DEFAULT_IMAGE = 'images/Default_image.png'
-DEFAULT_COVER = 'images/Default_cover.png'
-ICON = 'images/App_icon.png'
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    if getattr(sys, 'frozen', False):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.getcwd()
+    return os.path.join(base_path, relative_path)
+
+
+DEFAULT_PHOTO = resource_path(os.path.join('images', 'Default_photo.png'))
+DEFAULT_IMAGE = resource_path(os.path.join('images', 'Default_image.png'))
+DEFAULT_COVER = resource_path(os.path.join('images', 'Default_cover.png'))
+ICON = resource_path(os.path.join('images', 'App_icon.png'))
 ALB_LABEL_FONT = '; font-size: 15px'
 
 
@@ -142,4 +155,4 @@ def to_pixmap(foto):
 def excepthook(exc_type, exc_value, exc_tb):
     tb = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
     print("Oбнаружeна ошибка:", tb)
-    QtWidgets.QApplication.quit()
+    QApplication.quit()

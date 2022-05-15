@@ -1,7 +1,7 @@
+import os
 import sys
 import sqlite3 as sq
 
-from os import replace
 from math import ceil
 from PIL import Image
 from PyQt5.QtGui import QIcon
@@ -25,6 +25,8 @@ class LoginWindow(QWidget, Ui_Login):
         self.icon_lab.setPixmap(to_pixmap(im))
         self.setWindowIcon(QIcon(ICON))
 
+        if not os.path.exists('db'):
+            os.mkdir('db')
         self.bd = sq.connect('db/gallery.sqlite')
         cur = self.bd.cursor()
         cur.execute('''CREATE TABLE IF NOT EXISTS Users
@@ -395,7 +397,7 @@ class UserSettings(QWidget, Ui_UserSettings):
         self.cur_photo_name = parent.photo_path
         self.new_path = parent.path_to_bd
 
-        self.user_bd = sq.connect("gallery.sqlite")
+        self.user_bd = sq.connect("db/gallery.sqlite")
         cur = self.user_bd.cursor()
         self.password = cur.execute('''SELECT Password FROM Users
  WHERE Login = ?''', (parent.login, )).fetchone()[0]
@@ -567,7 +569,7 @@ class UserSettings(QWidget, Ui_UserSettings):
         self.parent.login = self.login
         if self.parent.path_to_bd != self.new_path:
             self.parent.bd.close()
-            replace(self.parent.path_to_bd, self.new_path)
+            os.replace(self.parent.path_to_bd, self.new_path)
             self.parent.bd = sq.connect(self.new_path)
             for al in self.parent.albums:
                 al.bd = self.parent.bd
