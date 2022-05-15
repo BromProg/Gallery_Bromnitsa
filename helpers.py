@@ -17,7 +17,7 @@ def resource_path(relative_path):
 DEFAULT_PHOTO = resource_path(os.path.join('images', 'Default_photo.png'))
 DEFAULT_IMAGE = resource_path(os.path.join('images', 'Default_image.png'))
 DEFAULT_COVER = resource_path(os.path.join('images', 'Default_cover.png'))
-ICON = resource_path(os.path.join('images', 'App_icon.png'))
+ICON = resource_path(os.path.join('images', 'favicon.ico'))
 ALB_LABEL_FONT = '; font-size: 15px'
 
 

@@ -7,7 +7,7 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=['C:\\Users\\Rostislav\\Desktop\\Rostislav\\PyCharm_programms\\Bromnitsa\\Gallery_Bromnitsa'],
              binaries=[],
-             datas=[('images\\App_icon.png', 'images'),
+             datas=[('images\\favicon.ico', 'images'),
              ('images\\Default_image.png', 'images'),
              ('images\\Default_photo.png', 'images'),
              ('images\\Default_cover.png', 'images')],
@@ -34,4 +34,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False, icon='C:\\Users\\Rostislav\\Desktop\\Rostislav\\PyCharm_programms\\Bromnitsa\\Gallery_Bromnitsa\\favicon.ico')
+          console=False, icon='C:\\Users\\Rostislav\\Desktop\\Rostislav\\PyCharm_programms\\Bromnitsa\\Gallery_Bromnitsa\\images\\favicon.ico')
