@@ -1,10 +1,10 @@
 <table bordercolor="none">
   <tr>
     <td>
-      <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/5NLU/5toyBN9yG" alt="Логотип" width="55" height="55" />
+      <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/iRY5/JgsxxQzMm" alt="Логотип" width="75" height="75" />
     </td>
     <td>
-      <h1>Фотогалерея "Бромница" — приложение для ПК.</h1>
+      <h1>Фотогалерея "Бромница" — приложение для ПК</h1>
     </td>
   </tr>
 </table>
